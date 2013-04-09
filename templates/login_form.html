@@ -1,16 +1,23 @@
 {% extends 'index.html' %}
 {% block title %} Login {% endblock %}
+{% block head %}
+{{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/form.css">
+{% endblock %}
 
 {% block body2 %}
-<form action= "/login/" method="POST" name="login_form" class="niceform">{% csrf_token %}
-    <fieldset>
-        <legend>Login Info</legend>
-        Username:<input type="text" autofocus name="name"><br>
-        Password:<input type="password"  name="password">
-    </fieldset>
-    <fieldset class="action">
-        <input id="submit" class="NFButton" type="submit" value="Submit" name="submit">
-        <input type="submit" value="Login">
-    </fieldset>
-</form>
+    <div class="myform" id="stylized">
+        <form action= "/login/" method="POST"  id="form" name="form" >{% csrf_token %}
+            <label> Username:
+                <span class="small">Enter your username</span>
+            </label>
+            <input type="text" autofocus name="name" id="name"><br>
+            <label>Password:
+                <span class="small">Enter your password</span>
+            </label>
+            <input type="password"  name="password" id="password">
+                <input type="submit" value="Login" name="submit">
+            <div class='spacer'></div>
+        </form>
+    </div>
 {% endblock %}
