@@ -1,0 +1,16 @@
+{% extends "index.html"%}
+{% block title %} Registration form {% endblock title %}
+{% block body2 %}
+{% if form.errors %}
+<p style="color:red;">
+    Please correct the error{{ form.errors|pluralize  }} below.
+</p>
+{% endif %}
+<form action="" method = "POST">{% csrf_token %}
+
+    <table>
+        {{ form.as_table }}
+    </table>
+<input type="submit" value="Submit">
+</form>
+{% endblock %}

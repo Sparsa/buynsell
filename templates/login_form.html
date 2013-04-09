@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block title %} Login {% endblock %}
+
+{% block body2 %}
+<form action= "/login/" method="POST" name="login_form" class="niceform">{% csrf_token %}
+    <fieldset>
+        <legend>Login Info</legend>
+        Username:<input type="text" autofocus name="name"><br>
+        Password:<input type="password"  name="password">
+    </fieldset>
+    <fieldset class="action">
+        <input id="submit" class="NFButton" type="submit" value="Submit" name="submit">
+        <input type="submit" value="Login">
+    </fieldset>
+</form>
+{% endblock %}

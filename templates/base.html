@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Add Title here {% endblock %}</title>
+   <style>
+       {% block style%}
+
+       {% endblock %}
+
+  </style>
+    {% block script %}
+
+    {% endblock %}
+
+
+    {% block head %} {% endblock %}
+
+</head>
+<body>
+
+{% block body1 %} {% endblock %}
+{% block body2 %}{% endblock%}
+{% block body3 %}{% endblock %}
+<footer>
+    {% block footer %} {% endblock %}
+</footer>
+</body>
+</html>

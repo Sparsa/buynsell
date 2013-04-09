@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Welcom to Buy&Sell {% endblock %}
+{%  block style %}
+
+    body {
+    background-image: url("{% static "images/Justice.jpg" %}");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/mysite.css">
+    <link rel="script" type="text/javascript" href="{{ STATIC_URL }}js/niceform.js"
+{% endblock %}
+{{ request.user.get_profile.whatever }}
+{% block  body1 %}
+    <div class="main">
+    {% include 'header.html' %}
+
+    <h1>The user ID is {{ request.user }}</h1>
+
+
+
+{% endblock %}
+{% block body2 %}
+<form action='/search/' method="POST">{% csrf_token %}
+   Search For Advertisements: <input type="text"  size = 20 name="search" autofocus>
+    <input type="submit" value="Search">
+</form>
+
+     <div class="coupon">
+            <h2>Web Special<em> of the</em> Week</h2>
+            Buy two sprockets get the third free!
+    </div>
+
+    </div>
+{% endblock %}
+{# include search_result.html #}
