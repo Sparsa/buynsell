@@ -52,9 +52,6 @@ def registration(request):
 
 
 
-def thanku(request):
-    return direct_to_template(request, "thanks.html")
-
 
 def oops(requst):
     return HttpResponse("Some thing wrong Happened! Sorry. Please try after some time.")
