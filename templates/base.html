@@ -5,7 +5,7 @@
     <title>{% block title %}Add Title here {% endblock %}</title>
    <style>
        {% block style%}
-
+           .clear { clear: both; }
        {% endblock %}
 
   </style>
@@ -18,10 +18,12 @@
 
 </head>
 <body>
-
+<div class="main">
 {% block body1 %} {% endblock %}
 {% block body2 %}{% endblock%}
 {% block body3 %}{% endblock %}
+<br  class='clear'/>
+</div>
 <footer>
     {% block footer %} {% endblock %}
 </footer>

@@ -1,11 +1,8 @@
 from django.db import models
-from django.forms import ModelForm
+from django.forms import ModelForm, Textarea
+from django import forms
 
 # Create your models here.
-
-class IterRegistry(type):
-    def __iter__(cls):
-        return iter(cls._registry)
 
 
 class Customer(models.Model):
@@ -18,6 +15,7 @@ class Customer(models.Model):
 
     def __unicode__(self):
         return self.first_name
+
 
 class Advertisement(models.Model):
     ad_by = models.ForeignKey(Customer)
@@ -38,6 +36,8 @@ class Bid(models.Model):
 
 
 class AdvertiseForm(ModelForm):
+    description = forms.CharField(widget=Textarea)
+
     class Meta:
         model = Advertisement
         exclude = ('ad_by',)

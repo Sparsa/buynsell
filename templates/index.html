@@ -2,9 +2,10 @@
 {% load staticfiles %}
 {% block title %} Welcom to Buy&Sell {% endblock %}
 {%  block style %}
+    {{ block.super }}
 
     body {
-    background-image: url("{% static "images/Justice.jpg" %}");
+    background: url("{% static "images/Justice.jpg" %}") no-repeat fixed 100% 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -14,10 +15,10 @@
 {% endblock %}
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/mysite.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/form.css">
 {% endblock %}
 {{ request.user.get_profile.whatever }}
 {% block  body1 %}
-    <div class="main">
     {% include 'header.html' %}
 
     <h1>The user ID is {{ request.user }}</h1>
@@ -36,6 +37,6 @@
             Buy two sprockets get the third free!
     </div>
 
-    </div>
+
 {% endblock %}
 {# include search_result.html #}

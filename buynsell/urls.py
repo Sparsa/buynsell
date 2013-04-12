@@ -18,7 +18,7 @@ urlpatterns = patterns('C2C.views',  # This is the patterns which get attached w
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^reg/$', 'registration'),
-    url(r'^thanks/$', 'thanku'),
+
     url(r'^oops/$', 'oops'),
     url(r'^search/$', 'search'),
     url(r'^loginf/$', TemplateView.as_view(template_name="login_form.html")),
